@@ -28,7 +28,7 @@ class AuthController extends Controller
       if (!Auth::attempt($reqVal)) {
         return response()->json([
           'status'=>'Error',
-          'message' => 'login failed email or password are incorrect',
+          'message' => 'Invalid credentials',
         ], 401);
     }
     $user = Auth::user();
