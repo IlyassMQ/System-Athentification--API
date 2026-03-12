@@ -58,7 +58,7 @@ class ProfileController extends Controller
     public function delete()
     {
     $user = Auth::user();
-    $user->currentAccessToken()->delete();
+    $user->tokens()->delete();
     $user->delete();
 
     return response()->json([
